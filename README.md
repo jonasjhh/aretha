@@ -1,5 +1,6 @@
 # Contracts
 
+Aretha - R-E-S-T-S-P-E-C — find out what my APIs mean to you.
 A lightweight alternative to publish and share your OpenAPI contracts.
 
 ## How it works
@@ -7,4 +8,4 @@ A lightweight alternative to publish and share your OpenAPI contracts.
 - The files are automatically published and viewable on GitHub Pages.  
 
 ## View the documentation
-[jonasjhh.github.io/contracts/](https://jonasjhh.github.io/contracts/)
+[jonasjhh.github.io/aretha/](https://jonasjhh.github.io/aretha/)
