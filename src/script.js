@@ -1,14 +1,12 @@
-let ui = null;
-
 const CONFIG = {
     ui: {
-        title: 'API Specifications'
+        title: 'API Specifications',
     },
     swaggerUI: {
         deepLinking: true,
-        layout: "StandaloneLayout",
-        tryItOutEnabled: true
-    }
+        layout: 'StandaloneLayout',
+        tryItOutEnabled: true,
+    },
 };
 
 function initializePage() {
@@ -29,24 +27,19 @@ async function initializeSwaggerUIWithSpecs() {
         }
 
         // Convert specs to Swagger UI format
-        const urls = window.SPECS_CONFIG.map(spec => ({
+        const urls = window.SPECS_CONFIG.map((spec) => ({
             url: spec.path,
-            name: spec.displayName
+            name: spec.displayName,
         }));
 
         // Initialize Swagger UI with built-in selector
-        ui = SwaggerUIBundle({
+        SwaggerUIBundle({
             urls: urls,
-            "urls.primaryName": urls[0]?.name,
+            'urls.primaryName': urls[0]?.name,
             dom_id: '#swagger-ui',
             deepLinking: CONFIG.swaggerUI.deepLinking,
-            presets: [
-                SwaggerUIBundle.presets.apis,
-                SwaggerUIStandalonePreset
-            ],
-            plugins: [
-                SwaggerUIBundle.plugins.DownloadUrl
-            ],
+            presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
+            plugins: [SwaggerUIBundle.plugins.DownloadUrl],
             layout: CONFIG.swaggerUI.layout,
             tryItOutEnabled: CONFIG.swaggerUI.tryItOutEnabled,
             onComplete: () => {
@@ -60,9 +53,8 @@ async function initializeSwaggerUIWithSpecs() {
                         ${error.message || 'Unknown error occurred'}
                     </div>
                 `;
-            }
+            },
         });
-
     } catch (error) {
         console.error('Error initializing Swagger UI:', error);
         document.getElementById('swagger-ui').innerHTML = `
